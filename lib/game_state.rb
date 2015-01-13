@@ -20,7 +20,7 @@ module GameState
     end
   end
 
-  def winner_line?(avatars)
+  def winning_line?(avatars)
     avatars.abs == @dimension
   end
 

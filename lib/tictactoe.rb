@@ -1,24 +1,9 @@
+require_relative "machine_player"
 
 class Tictactoe
-  attr_accessor :player_1, :player_2
+  attr_reader :player_1, :player_2
   def initialize(board)
-    @board    = board
-  end
-
-  def choose_players
-    game_type = 0
-    while game_type > 3 || game_type < 1
-      puts "How would you like to proceed? \n
-      1 - Human vs. Human,\n
-      2 - Human vs. Computer"
-      game_type = Kernel::gets.chomp.to_i
-      if game_type == 1
-        @player_1 = Human.new(@board,"O")
-        @player_2 = Human.new(@board,"O")
-      elsif game_type == 2
-        choose_first_move
-      end
-    end
+    @board  = board
   end
 
   def run
@@ -39,11 +24,30 @@ class Tictactoe
       choice = gets.chomp
       if choice == "y"
         @player_1 = Human.new(@board,"O")
+        @player_2 = Ai.new(@board, -1)
       elsif choice == "n"
+        @player_1 = Ai.new(@board, 1)
         @player_2 = Human.new(@board,"O")
       end
     end
   end
+
+  def choose_players
+    game_type = 0
+    while game_type > 3 || game_type < 1
+      puts "How would you like to proceed? \n
+      1 - Human vs. Human,\n
+      2 - Human vs. Computer"
+      game_type = Kernel::gets.chomp.to_i
+      if game_type == 1
+        @player_1 = Human.new(@board,"O")
+        @player_2 = Human.new(@board,"O")
+      elsif game_type == 2
+        choose_first_move
+      end
+    end
+  end
+
 
   def print_end_of_game_message
     unless @board.get_winner == 0

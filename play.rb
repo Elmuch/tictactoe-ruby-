@@ -1,11 +1,9 @@
-$: << File.dirname( __FILE__)
-
-require 'lib/board'
-require 'lib/human'
-require 'lib/ai'
-require 'lib/tictactoe'
-require 'lib/players'
-require 'lib/game_state'
+require_relative 'lib/board'
+require_relative 'lib/human'
+require_relative 'lib/ai'
+require_relative 'lib/tictactoe'
+require_relative 'lib/players'
+require_relative 'lib/game_state'
 
 
 system('clear')

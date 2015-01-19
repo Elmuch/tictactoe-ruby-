@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'spork'
+require 'rspec'
+require 'byebug'
+
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -14,7 +17,3 @@ Spork.each_run do
   # This code will be run each time you run your specs.
 
 end
-
-
-require 'rspec'
-require 'byebug'

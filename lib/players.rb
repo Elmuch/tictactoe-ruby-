@@ -21,6 +21,7 @@ class Players
       @move = @player_2.get_move()
       @board.update_element(@move[0], @move[1], @turn)
     end
+
     switch_turns
   end
 

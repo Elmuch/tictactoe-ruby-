@@ -1,11 +1,7 @@
-#
-#
 
 class Human
-
-  def initialize(board, avatar)
+  def initialize(board)
     @board = board
-    @avatar = avatar
   end
 
   def get_move()
@@ -28,12 +24,15 @@ class Human
 
   def get_input
     @input = Array.new
-    print "Enter the cordinates: "
+
+    print "Enter row cordinate "
     @input << gets.chomp.to_i
-    print "Enter the cordinates: "
+    print "Enter column cordinate "
     @input << gets.chomp.to_i
+
     @input[0] -= 1
     @input[1] -= 1
+
     return @input
   end
 

@@ -1,4 +1,3 @@
-require_relative "machine_player"
 
 class Tictactoe
   attr_reader :player_1, :player_2
@@ -14,7 +13,14 @@ class Tictactoe
       @moves.set_player_move
     end
     @board.print
-    print_end_of_game_message
+
+    unless @board.get_winner == 0
+      puts "Player 1 WINS!" if @board.get_winner == 1
+      puts "Player 2 WINS!" if @board.get_winner == -1
+    else
+      puts "Tie game."
+    end
+
   end
 
   def choose_first_move
@@ -47,15 +53,4 @@ class Tictactoe
       end
     end
   end
-
-
-  def print_end_of_game_message
-    unless @board.get_winner == 0
-      puts "Player 1 WINS!" if @board.get_winner == 1
-      puts "Player 2 WINS!" if @board.get_winner == -1
-    else
-      puts "Tie game."
-    end
-  end
-
 end

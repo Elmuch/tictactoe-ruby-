@@ -5,7 +5,7 @@ require_relative "game_state"
 
 class Board
   include GameState
-  attr_accessor :dimension # could be just a reader but this works well in the specs
+  attr_accessor :matrix # could be just a reader but this works well in the specs
 
   def initialize
     @dimension = 3
@@ -37,7 +37,7 @@ class Board
 
   # Set the element in the matrix
 
-  def update_element( row, column, avatar )
+  def update_element( row, column, avatar)
     @matrix[row][column] = avatar
   end
 

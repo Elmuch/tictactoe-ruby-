@@ -11,11 +11,11 @@ module GameState
   def print()
     each_cell() do |row, column|
       puts "" if column == 0 && row == 0
-      putc "|"
-      putc "X" if get_element(row,column) == 1
-      putc "O" if get_element(row,column) == -1
-      putc " " if get_element(row,column) == 0
-      putc "|"
+      print "|"
+      print "X" if get_element(row,column) == 1
+      print "O" if get_element(row,column) == -1
+      print " " if get_element(row,column) == 0
+      print "|"
       puts "" if column == @dimension - 1
     end
   end

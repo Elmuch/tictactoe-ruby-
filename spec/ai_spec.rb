@@ -9,4 +9,7 @@ RSpec.describe Ai do
   it "creates an Ai without an error" do
     expect { Ai.new(@board,1) }.to_not raise_error
   end
+
+  xit "should always get the best move" do
+  end
 end

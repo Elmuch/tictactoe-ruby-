@@ -7,7 +7,7 @@ RSpec.describe Human do
     @board = Board.new
   end
 
-  it "creates a Human player instance without an error" do
-    expect { Human.new(@board,1) }.to_not raise_error
+  it "should create a Human player instance without an error" do
+    expect { Human.new(@board) }.to_not raise_error
   end
 end

@@ -1,4 +1,4 @@
-
+# 
 class Human
   def initialize(board)
     @board = board
@@ -25,9 +25,9 @@ class Human
   def get_input
     @input = Array.new
 
-    print "Enter row cordinate "
+    print "Enter row coordinate "
     @input << gets.chomp.to_i
-    print "Enter column cordinate "
+    print "Enter column coordinate "
     @input << gets.chomp.to_i
 
     @input[0] -= 1

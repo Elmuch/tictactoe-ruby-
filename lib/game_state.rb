@@ -1,3 +1,6 @@
+# Board State
+#
+
 module GameState
 
   def winning_line?(avatars)

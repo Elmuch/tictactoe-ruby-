@@ -24,6 +24,7 @@ class Ai
       end
 
     end
+    
     # max 
     if turn == 1
       max_index = moves_scores.each_with_index.max[1]
@@ -43,6 +44,7 @@ class Ai
   end
 
   def get_move()
+    puts "Please wait....."
     minimax(@board, @turn)
     return @best_move
   end

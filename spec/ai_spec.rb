@@ -15,8 +15,7 @@ RSpec.describe Ai do
     moves = [[0,0],[1,1],[2,1]]
     scores = [8,-1,4]
     turn = -1
-    @ai.set_best_move(moves, scores, turn)
-    expect(@ai.set_score_of_path(scores)).to eq(11)
-    expect(@ai.best_move).to eq([1,1])
+    @ai.get_move # A stub would be used here, takes forever
+    expect(@ai.best_move).to eq([2,2])
   end
 end

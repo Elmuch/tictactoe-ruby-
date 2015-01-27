@@ -1,4 +1,7 @@
 
+# Game controller
+#
+
 class Tictactoe
   attr_reader :player_1, :player_2
   def initialize(board)
@@ -18,6 +21,9 @@ class Tictactoe
       elsif choice == "n"
         @player_1 = Ai.new(@board, 1)
         @player_2 = Human.new(@board)
+      else
+        puts "Unknown Choice \n"
+        next
       end
 
     end
@@ -37,6 +43,9 @@ class Tictactoe
         @player_2 = Human.new(@board)
       elsif game_type == 2
         choose_first_move
+      else 
+        puts "Unknown Choice \n"
+        next
       end
 
     end

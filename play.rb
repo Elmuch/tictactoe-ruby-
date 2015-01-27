@@ -9,8 +9,8 @@ require_relative 'lib/game_state'
 system('clear')
 
 puts "+-------------------------------+\n
-  WELCOME TO TICTACTOE \n
-  Press q at any time to quit\n"
+  WELCOME TO TICTACTOE \n"
+  
 puts "+------------------------------+ \n\n"
 
   game = Tictactoe.new(Board.new)

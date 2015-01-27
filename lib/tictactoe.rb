@@ -5,26 +5,6 @@ class Tictactoe
     @board  = board
   end
 
-  def run
-    choose_players
-    @moves = Players.new(@board, @player_1, @player_2)
-
-    until @board.game_over?
-      @board.display
-      @moves.set_player_move
-    end
-
-    @board.display
-
-    unless @board.get_winner == 0
-      puts "Player 1 Wins -_-" if @board.get_winner == 1
-      puts "Player 2 Wins -_-" if @board.get_winner == -1
-    else
-      puts "Tie game."
-    end
-
-  end
-
   def choose_first_move
     choice = ""
 
@@ -61,4 +41,26 @@ class Tictactoe
 
     end
   end
+
+
+  def run
+    choose_players
+    moves = Players.new(@board, @player_1, @player_2)
+
+    until @board.game_over?
+      @board.display
+      moves.set_player_move
+    end
+
+    @board.display
+
+    unless @board.get_winner == 0
+      puts "Player 1 Wins -_-" if @board.get_winner == 1
+      puts "Player 2 Wins -_-" if @board.get_winner == -1
+    else
+      puts "Tie game.-"
+    end
+
+  end
+  
 end

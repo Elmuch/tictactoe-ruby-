@@ -10,17 +10,17 @@ class Ai
   end
 
   def minimax(board, turn, depth = 0)
-    return take_middle if @board.empty_board?
-    return weight_winners(depth) if @board.game_over?
+    return take_middle if board.empty_board?
+    return weight_winners(depth) if board.game_over?
 
     possible_moves = Array.new
     moves_scores = Array.new
 
-    @board.each_cell() do |row, column|
-      if @board.get_element(row,column) == 0
-        @board.update_element(row,column,turn)
+    board.each_cell() do |row, column|
+      if board.get_element(row,column) == 0
+        board.update_element(row,column,turn)
         possible_moves << [row,column]
-        moves_scores << minimax(@board, -1*@turn, depth + 1)
+        moves_scores << minimax(board, -1*turn, depth + 1)
         board.update_element(row,column,0)
       end
 
